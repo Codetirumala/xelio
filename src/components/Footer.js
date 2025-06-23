@@ -10,7 +10,7 @@ const Footer = () => (
     <div className="footer-main">
       <div className="footer-col footer-brand">
         <div className="footer-logo-row">
-          <img src={require('./images/w_logo.png')} alt="xolio logo" className="footer-logo" />
+          <img src={require('./images/w_logoo.png')} alt="xolio logo" className="footer-logo" />
         </div>
         <div className="footer-social-row">
           <a href="#" className="footer-social"><i className="fab fa-facebook-f" /></a>
