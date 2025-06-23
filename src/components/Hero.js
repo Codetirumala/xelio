@@ -257,7 +257,7 @@ const Hero = () => {
             {visibleCards.map((card, idx) => (
               <div className="portfolio-showcase-card" key={sliderIndex + idx}>
                 <div className="portfolio-showcase-card-inner">
-                  <span className="portfolio-showcase-card-size">{card.size}</span>
+                  <img src={require(`./images/port${(sliderIndex + idx) % 4 + 1}.webp`)} alt={`portfolio-${sliderIndex + idx + 1}`} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:'36px'}} />
                 </div>
               </div>
             ))}
