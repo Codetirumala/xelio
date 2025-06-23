@@ -18,6 +18,40 @@ const portfolioCardData = [
   { size: '514X722' },
 ];
 
+
+const services = [
+  {
+   
+    title: 'Search Engine Optimization',
+    description: 'Share Processes And Data Secure Lona Need To Know Basis Our Team Assured Your Web Site Is Always Safe And',
+  },
+  {
+   
+    title: 'Website Development',
+    description: 'Share Processes And Data Secure Lona Need To Know Basis Our Team Assured Your Web Site Is Always Safe And',
+  },
+  {
+    
+    title: 'Pay-Per-Click Advertising',
+    description: 'Share Processes And Data Secure Lona Need To Know Basis Our Team Assured Your Web Site Is Always Safe And',
+  },
+  {
+    
+    title: 'Social Media Marketing',
+    description: 'Share Processes And Data Secure Lona Need To Know Basis Our Team Assured Your Web Site Is Always Safe And',
+  },
+  {
+   
+    title: 'Email Marketing',
+    description: 'Share Processes And Data Secure Lona Need To Know Basis Our Team Assured Your Web Site Is Always Safe And',
+  },
+  {
+   
+    title: 'Content Marketing',
+    description: 'Share Processes And Data Secure Lona Need To Know Basis Our Team Assured Your Web Site Is Always Safe And',
+  }
+];
+
 // Testimonial data for the section
 const testimonials = [
   {
@@ -262,6 +296,28 @@ const Hero = () => {
         ))}
       </div>
     </section>
+
+
+
+
+    <section className="marquee-section">
+        <div className="marquee-container">
+          <div className="marquee marquee-top">
+            <div className="marquee-content">
+              {[...services, ...services].map((service, index) => (
+                <span key={index}>{service.title}</span>
+              ))}
+            </div>
+          </div>
+          <div className="marquee marquee-bottom">
+            <div className="marquee-content reverse">
+              {[...services, ...services].map((service, index) => (
+                <span key={index}>{service.title}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
     <section className="consultation-section">
       <div className="consultation-container">

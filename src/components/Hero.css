@@ -1911,5 +1911,83 @@
   }
 }
   
+.marquee-section {
+  position: relative;
+  height: 650px;
+  background-image: 
+    url('./images/marque-img.webp'),
+    linear-gradient(180deg, #f97316 10%, #f97316 80%);
+  background-size: 70%, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.marquee-section::after {
+  content: none;
+}
+
+.marquee-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: linear-gradient(180deg, #CF0 10%, #849A2E 80%) !important;
+  
+
+  
+  
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-top {
+  transform: linear infinite;
+ 
+  
+}
+
+.marquee-bottom {
+  transform: linear infinite;
+  margin-top: 2rem;
+}
+
+.marquee-content {
+  display: flex;
+  width: fit-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-content.reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.marquee-content span {
+  font-size: 6rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  flex-shrink: 0;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
 
   
