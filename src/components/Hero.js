@@ -375,13 +375,12 @@ const Hero = () => {
         {[1,2,3].map((item, idx) => (
           <div className="blog-card" key={idx}>
             <div className="blog-card-image" style={{background:'#bbb', borderRadius:'24px 24px 0 0', height:'340px', display:'flex',alignItems:'center',justifyContent:'center',fontSize:'64px',color:'#111',fontWeight:'500'}}>
-              {idx === 2 ? '553X642' : '555X644'}
+              <img src={require(`./images/blog-${idx+1}.webp`)} alt={`blog-${idx+1}`} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:'24px 24px 0 0'}} />
             </div>
             <div className="blog-card-footer">
               <div className="blog-card-category">Branding</div>
               <div className="blog-card-title">How To Create JavaScript Vanilla Gantt Chart: Adding</div>
               <div className="blog-card-author-row">
-                <img src={require(`./images/avatar-${idx+1}.png`)} alt="author" className="blog-card-author-avatar" />
                 <span className="blog-card-author-name">By Ataur</span>
               </div>
             </div>
