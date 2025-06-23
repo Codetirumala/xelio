@@ -53,7 +53,7 @@ const Footer = () => (
         <img src={require('./images/cart_img.png')} alt="PayPal" className="footer-payment-img" />
       </div>
       <div className="footer-copyright">
-        © 2023 xilio. All Rights Reserved
+        © 2025 TechVision. All Rights Reserved
       </div>
       
     </div>

@@ -60,7 +60,7 @@ function App() {
       {loading && (
         <div className="page-loader">
           <div className="loader-circle">
-            <img src={require('./components/images/logo (1).png')} alt="Logo" className="loader-logo-static" />
+            <img src={require('./components/images/w_logo.png')} alt="Logo" className="loader-logo-static" />
           </div>
         </div>
       )}
