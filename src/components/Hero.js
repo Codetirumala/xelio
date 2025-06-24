@@ -97,6 +97,14 @@ const Hero = () => {
     if (canSlideRight) setSliderIndex(sliderIndex + 1);
   };
 
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const handleTestimonialLeft = () => {
+    setTestimonialIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+  const handleTestimonialRight = () => {
+    setTestimonialIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -269,30 +277,32 @@ const Hero = () => {
     <section className="testimonials-section">
       <div className="testimonials-header">
         <span className="testimonials-subtitle">Testimonials</span>
-        <h2 className="testimonials-title">Shat Our Customer Say<br />About Us</h2>
+        <h2 className="testimonials-title">What Our Customer Say<br />About Us</h2>
       </div>
-      <div className="testimonials-cards-row">
-        {testimonials.map((t, idx) => (
-          <div className="testimonial-card" key={idx}>
+      <div className="testimonials-carousel-wrapper" style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',maxWidth:'100vw'}}>
+        <button className="testimonials-arrow left" onClick={handleTestimonialLeft} aria-label="Previous testimonial">&#8592;</button>
+        <div className="testimonials-carousel-card" style={{display:'flex',justifyContent:'center',alignItems:'center',width:'100%',maxWidth:'420px'}}>
+          <div className="testimonial-card" key={testimonialIndex}>
             <div className="testimonial-quote-mark">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 24C12 20 14 16 18 16V12C12 12 8 16 8 24H12ZM24 24C24 20 26 16 30 16V12C24 12 20 16 20 24H24Z" fill="#f59e42"/>
               </svg>
             </div>
-            <div className="testimonial-text">{t.text}</div>
+            <div className="testimonial-text">{testimonials[testimonialIndex].text}</div>
             <div className="testimonial-user-row">
-              <img src={t.avatar} alt={t.name} className="testimonial-avatar" style={{ background: t.color }} />
+              <img src={testimonials[testimonialIndex].avatar} alt={testimonials[testimonialIndex].name} className="testimonial-avatar" style={{ background: testimonials[testimonialIndex].color }} />
               <div>
-                <div className="testimonial-name">{t.name}</div>
-                <div className="testimonial-role">{t.role}</div>
+                <div className="testimonial-name">{testimonials[testimonialIndex].name}</div>
+                <div className="testimonial-role">{testimonials[testimonialIndex].role}</div>
               </div>
             </div>
           </div>
-        ))}
+        </div>
+        <button className="testimonials-arrow right" onClick={handleTestimonialRight} aria-label="Next testimonial">&#8594;</button>
       </div>
       <div className="testimonials-pagination">
-        {[0,1,2,3].map((i) => (
-          <span className={`testimonials-dot${i === 2 ? ' active' : ''}`} key={i}></span>
+        {testimonials.map((_, i) => (
+          <span className={`testimonials-dot${i === testimonialIndex ? ' active' : ''}`} key={i} onClick={() => setTestimonialIndex(i)}></span>
         ))}
       </div>
     </section>
