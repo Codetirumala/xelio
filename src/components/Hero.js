@@ -202,7 +202,7 @@ const Hero = () => {
           <div className="team-avatars">
             <div className="avatar-container">
               <img 
-                src={require('./images/image1.png')} 
+                src={require('./images/team_main_img.png')} 
                 alt="Our Team" 
                 className="team-image"
               />
