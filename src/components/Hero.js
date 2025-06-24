@@ -274,7 +274,11 @@ const Hero = () => {
       </div>
     </section>
 
-    <section className="testimonials-section">
+    <section className="testimonials-section" style={{position: 'relative', overflow: 'hidden'}}>
+      {/* Animated background shapes */}
+      <img src={require('./images/work_shape02.png')} alt="bg-shape" className="testimonial-bg-shape shape02" />
+      <img src={require('./images/work_shape03.png')} alt="bg-shape" className="testimonial-bg-shape shape03" />
+      <img src={require('./images/work_shape01.png')} alt="bg-shape" className="testimonial-bg-shape shape01" />
       <div className="testimonials-header">
         <span className="testimonials-subtitle">Testimonials</span>
         <h2 className="testimonials-title">What Our Customer Say<br />About Us</h2>
